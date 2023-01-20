@@ -1,14 +1,21 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+// import 'bootstrap/dist/css/bootstrap.main.css'
+// import "bootstrap-icons/font/bootstrap-icons.css"
+import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import { AuthContextProvider } from './pages/context/AuthContext';
 
-ReactDOM.render(
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(
+  
   <React.StrictMode>
+    <AuthContextProvider>
     <App />
-  </React.StrictMode>,
-  document.getElementById('root')
+    </AuthContextProvider>
+  </React.StrictMode>
+  // document.getElementById('root')
 );
 
 // If you want to start measuring performance in your app, pass a function
